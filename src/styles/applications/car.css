@@ -1,0 +1,17 @@
+.auth-box > .right {
+  background-image: url("http://campbellfield.satgurumotors.com.au/wp-content/uploads/2015/09/mechanic-.jpg") !important;
+}
+
+.auth-box > .right > .overlay {
+  background: rgba(185, 99, 99, 0.6) !important;
+}
+
+.auth-box > .left > .content > form button[type=submit]  {
+  background-color: #ff0000 !important;
+  border-color: #f00000 !important;
+}
+
+.auth-box > .left > .content > form button[type=submit]:hover  {
+  background-color: #f00000 !important;
+  border-color: #f00000 !important;
+}
