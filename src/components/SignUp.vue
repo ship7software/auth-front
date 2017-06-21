@@ -1,6 +1,13 @@
 <template>
   <form class="form-auth-small" @submit.prevent.default>
     <label>Preencha todos os campos abaixo: </label>
+    <alert v-if="errorMessages && errorMessages.length > 0">
+      <b>Ops! </b> Tivemos um problema ao realizar o cadastro.
+      <br><br>
+      <ul>
+        <li v-for="error in errorMessages">{{ error }}</li>
+      </ul>
+    </alert>
     <div class="form-group" v-bind:class="{ 'form-group--error': $v.sponsorName.$error }">
       <input v-model="sponsorName" type="text" class="form-control" ref="sponsorName" placeholder="Seu nome" @input="$v.sponsorName.$touch()">
     </div>
@@ -39,6 +46,7 @@ export default {
     phone: '',
     name: '',
     sponsorName: '',
+    errorMessages: [],
   }),
   validations: {
     email: {
@@ -51,9 +59,7 @@ export default {
     sponsorName: {
       required,
     },
-    phone: {
-      required,
-    },
+    phone: {},
     password: {
       required,
     },
@@ -67,6 +73,8 @@ export default {
   },
   methods: {
     register() {
+      this.errorMessages = [];
+      const $vm = this;
       organizationService.register({
         email: this.email,
         password: this.password,
@@ -76,6 +84,14 @@ export default {
       }).then((response) => {
         if (response.data.redirectUrl) {
           window.location.href = response.data.redirectUrl;
+        }
+      }).catch((err) => {
+        if (err.response.data) {
+          if (err.response.data.messages) {
+            $vm.errorMessages = err.response.data.messages;
+          } else if (err.response.data.message) {
+            $vm.errorMessages.push(err.response.data.message);
+          }
         }
       });
     },

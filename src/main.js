@@ -14,6 +14,7 @@ import './styles/validation.css';
 import App from './App';
 import contextService from './service/context';
 import AppSolver from './components/AppSolver';
+import Alert from './components/Alert';
 
 promiseFinally.shim();
 Vue.prototype.$q = q;
@@ -42,6 +43,7 @@ Axios.interceptors.response.use(response => response, (error) => {
 Vue.component('app-solver', AppSolver);
 Vue.component('vue-spinner', Spinner);
 Vue.component('vue-password', VuePassword);
+Vue.component('alert', Alert);
 Vue.use(VueTheMask);
 
 new Vue({

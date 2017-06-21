@@ -21,14 +21,6 @@
                     <router-view></router-view>
                   </div>
               </div>
-              <div class="right">
-                  <div class="overlay"></div>
-                  <div class="content text">
-                    <h1 class="heading">{{ app.name }}</h1>
-                    <div v-html="(app.authPage || {}).htmlDescription"></div>
-                  </div>
-              </div>
-              <div class="clearfix"></div>
             </div>
         </div>
       </div>
