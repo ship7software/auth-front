@@ -15,7 +15,7 @@ export default function (resolve) {
     if (response.data.app) {
       Object.assign(strings, response.data);
       setApplicationStyle(response.data.app);
-      contextService.set(response.data.app);
+      contextService.set(response.data.app.shortName);
     }
   }).catch(() => {
     error = true;

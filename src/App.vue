@@ -49,10 +49,12 @@ export default {
   }),
   mounted() {
     this.title = this.$router.currentRoute.name;
+    window.document.title = `${strings.app.name} - ${this.title}`;
   },
   watch: {
     $route(route) {
       this.title = route.name;
+      window.document.title = `${strings.app.name} - ${this.title}`;
     },
   },
   methods: {
@@ -76,6 +78,7 @@ export default {
     },
     finishLoad() {
       this.app = strings.app;
+      window.document.title = `${strings.app.name} - ${this.title}`;
       setTimeout(() => { this.loading = false; }, 500);
     },
     onError() {

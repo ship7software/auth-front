@@ -22,6 +22,7 @@
     "vue-password": "0.0.11",
     "vue-router": "^2.3.1",
     "vue-simple-spinner": "^1.2.1",
+    "vue-the-mask": "^0.9.0",
     "vuelidate": "^0.5.0"
   },
   "devDependencies": {

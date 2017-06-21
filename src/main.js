@@ -7,6 +7,7 @@ import promiseFinally from 'promise.prototype.finally';
 import Spinner from 'vue-simple-spinner';
 import VuePassword from 'vue-password';
 import Vuelidate from 'vuelidate';
+import VueTheMask from 'vue-the-mask';
 import router from './router';
 import './styles/main.css';
 import './styles/validation.css';
@@ -26,11 +27,7 @@ Vue.use(Vuelidate);
 /* eslint-disable no-new, no-param-reassign */
 
 Axios.interceptors.request.use((config) => {
-  const app = contextService.getStored();
-
-  if (app) {
-    config.headers['X-Application'] = contextService.getStored();
-  }
+  config.headers['X-Application'] = contextService.getStored();
 
   return config;
 });
@@ -45,6 +42,7 @@ Axios.interceptors.response.use(response => response, (error) => {
 Vue.component('app-solver', AppSolver);
 Vue.component('vue-spinner', Spinner);
 Vue.component('vue-password', VuePassword);
+Vue.use(VueTheMask);
 
 new Vue({
   el: '#app',
