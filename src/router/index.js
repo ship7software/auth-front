@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/components/Login';
 import SignUp from '@/components/SignUp';
+import PasswordReset from '@/components/PasswordReset';
 
 Vue.use(Router);
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/signup',
       name: 'Criar conta de acesso',
       component: SignUp,
+    },
+    {
+      path: '/passwordReset',
+      name: 'Redefinir a Senha',
+      component: PasswordReset,
     },
   ],
 });

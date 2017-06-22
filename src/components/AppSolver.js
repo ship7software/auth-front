@@ -2,6 +2,7 @@
 
 import strings from './../strings';
 import contextService from './../service/context';
+
 /* eslint-disable */
 export default function (resolve) {
   function setApplicationStyle(app) {

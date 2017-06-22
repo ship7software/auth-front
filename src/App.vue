@@ -8,23 +8,21 @@
         </div>
       </div>
     </transition>
-    <transition name="fade" v-else>
-      <div class="vertical-align-wrap">
-        <div class="vertical-align-middle">
-            <div class="auth-box ">
-              <div class="left">
-                  <div class="content">
-                    <div class="header">
-                        <div class="logo text-center"><img :src="app.logoUrl" height="50px" alt="Application Logo"></div>
-                        <p class="lead">{{ title }}</p>
-                    </div>
-                    <router-view></router-view>
+    <div class="vertical-align-wrap" v-else>
+      <div class="vertical-align-middle">
+          <div class="auth-box ">
+            <div class="left">
+                <div class="content">
+                  <div class="header">
+                      <div class="logo text-center"><img :src="app.logoUrl" height="50px" alt="Application Logo"></div>
+                      <p class="lead">{{ title }}</p>
                   </div>
-              </div>
+                  <router-view></router-view>
+                </div>
             </div>
-        </div>
+          </div>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -87,7 +85,7 @@ export default {
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition: opacity 5s
+    transition: opacity .5s
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
     opacity: 0

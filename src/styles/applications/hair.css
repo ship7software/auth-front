@@ -1,17 +1,19 @@
-.auth-box > .right {
-  background-image: url("https://www.gaurirealleza.com.br/wp-content/uploads/2016/04/SPA.jpg") !important;
+#wrapper:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(https://www.gaurirealleza.com.br/wp-content/uploads/2016/04/SPA.jpg); 
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    width: 100%;
+    height: 100%;
+    opacity : 0.4;
+    z-index: -1;  
 }
 
-.auth-box > .right > .overlay {
-  background: rgba(99, 156, 185, 0.6) !important;
-}
-
-.auth-box > .left > .content > form button[type=submit]  {
-  background-color: #00aaff !important;
-  border-color: #00a0f0 !important;
-}
-
-.auth-box > .left > .content > form button[type=submit]:hover  {
-  background-color: #00a0f0 !important;
-  border-color: #00a0f0 !important;
+.auth-box {
+  background: rgba(255,255,255, 0.7) !important;
 }
