@@ -21,7 +21,7 @@ Vue.prototype.$q = q;
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = Axios;
-Axios.defaults.baseURL = process.env.API_URL;
+Axios.defaults.baseURL = process.env.API_URL || '/api';
 
 Vue.use(Vuelidate);
 

@@ -93,7 +93,17 @@ var webpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
-      }
+      },
+      {
+        from: path.resolve(__dirname, '../*manifest*.yml'),
+        to: config.build.assetsRoot,
+        ignore: ['.*']
+      },
+      {
+        from: path.resolve(__dirname, '../nginx.conf'),
+        to: config.build.assetsRoot,
+        ignore: ['.*']
+      } 
     ])
   ]
 })

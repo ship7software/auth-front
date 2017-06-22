@@ -1,0 +1,6 @@
+inherit: base-manifest.yml
+applications:
+- name: ship7-auth-frontend
+  host: ship7-auth-frontend
+  env:
+    BACKEND_URL: ship7-auth-service.mybluemix.net

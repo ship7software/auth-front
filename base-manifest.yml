@@ -1,0 +1,5 @@
+memory: 32m
+buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+instances: 1
+env:
+  FORCE_HTTPS: true
