@@ -28,7 +28,8 @@ Vue.use(Vuelidate);
 /* eslint-disable no-new, no-param-reassign */
 
 Axios.interceptors.request.use((config) => {
-  config.headers['X-Application'] = contextService.getStored();
+  config.headers['X-Application'] = contextService.getAppStored();
+  config.headers['X-Context'] = contextService.getStored();
 
   return config;
 });

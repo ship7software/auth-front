@@ -16,7 +16,8 @@ export default function (resolve) {
     if (response.data.app) {
       Object.assign(strings, response.data);
       setApplicationStyle(response.data.app);
-      contextService.set(response.data.app.shortName);
+      contextService.set(response.data.hostname);
+      contextService.setApp(response.data.app.shortName);
     }
   }).catch(() => {
     error = true;
@@ -28,7 +29,7 @@ export default function (resolve) {
         if (error) {
           this.$emit('error');
         }
-        this.$emit('resolved', contextService.getStored());
+        this.$emit('resolved', contextService.getAppStored());
         this.$emit('updateHead');
       },
     });

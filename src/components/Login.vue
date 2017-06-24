@@ -56,7 +56,7 @@ export default {
       this.loginError = false;
       const $vm = this;
       authService.login($vm.user).then((response) => {
-        authService.resolveAuthResponse(response.data);
+        authService.resolveAuthResponse(response.data, this.$router.query);
       }).catch(() => { $vm.loginError = true; })
       .finally(() => { setTimeout(() => { this.loading = false; }, 500); });
     },

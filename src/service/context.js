@@ -15,11 +15,17 @@ const context = new Vue({
         params,
       });
     },
-    set(app) {
+    setApp(app) {
       window.localStorage.setItem('application', app);
     },
-    getStored() {
+    getAppStored() {
       return window.localStorage.getItem('application');
+    },
+    set(app) {
+      window.localStorage.setItem('context', app);
+    },
+    getStored() {
+      return window.localStorage.getItem('context');
     },
   },
 });
